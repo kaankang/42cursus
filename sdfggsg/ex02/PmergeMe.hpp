@@ -5,6 +5,7 @@
 #include <deque>
 #include <sstream>
 #include <ctime>
+#include <cstdlib>
 
 class PmergeMe
 {
