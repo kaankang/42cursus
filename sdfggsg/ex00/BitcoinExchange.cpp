@@ -39,9 +39,9 @@ void BitcoinExchange::parser(std::string first, double second, int min_year)
     int control;
     double value;
 
-    year = stoi(first.substr(0,4));
-    month = stoi(first.substr(5,2));
-    day = stoi(first.substr(8,10));
+    year = atoi(first.substr(0,4).c_str());
+    month = atoi(first.substr(5,2).c_str());
+    day = atoi(first.substr(8,10).c_str());
     value = second;
     control = 0;
 
@@ -59,7 +59,7 @@ void BitcoinExchange::parser(std::string first, double second, int min_year)
     {
         std::cout << "bad input => " << first.substr(0,10) << std::endl;
     }
-    else if(month == 2 && control == 0 & day > 28)
+    else if(month == 2 && control == 0 && day > 28)
     {
         std::cout << "bad input => " << first.substr(0,10) << std::endl;
     }
@@ -81,8 +81,8 @@ int BitcoinExchange::min_year()
 	std::map<std::string, float>::iterator it;
 
 	for (it = this->csvRead.begin(); it != this->csvRead.end(); it++)
-		if (min_date > std::stoi(it->first.substr(0,4)))
-			min_date = std::stoi(it->first.substr(0,4));
+		if (min_date > std::atoi(it->first.substr(0,4).c_str()))
+			min_date = std::atoi(it->first.substr(0,4).c_str());
 	return (min_date);
 }
 

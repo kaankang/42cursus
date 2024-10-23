@@ -86,13 +86,13 @@ void start(std::stack<int> &stack, std::string input)
 			if (stack.size() == 2 && !is_valid(input.c_str(), i))
 			{
 				std::cout << "Error" << std::endl;
-				exit(1);
+				exit (1);
 			}
 		}
 		else
 		{
 			std::cout << "Error" << std::endl;
-			exit(1);
+			exit (1);
 		}
 	}
 	std::cout << "Result: " << stack.top() << std::endl;

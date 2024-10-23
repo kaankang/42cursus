@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stack>
+#include <cstdlib>
 
 int		is_operator(char a);
 void	start(std::stack<int> &stack, std::string input);
